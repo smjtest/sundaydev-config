@@ -26,8 +26,11 @@ spring:
   rabbitmq:
     host: localhost
     port: 5672
-    username: user
-    password: password
+    username: coupon
+    password: 1234
+  cloud:
+    bus:
+      destination: coupon-stg-bus
 
 
 logging:
