@@ -1,0 +1,64 @@
+spring:
+  devtools:
+    livereload:
+      enabled: true
+    restart:
+      enabled: true
+  thymeleaf:
+    cache: false
+  datasource:
+    url: jdbc:postgresql://192.168.5.3:5432/todolist
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      pool-name: SpringBootHikariCP-pool
+      maximum-pool-size: 3
+      minimum-idle: 3
+      max-lifetime: 2000000
+      connection-timeout: 30000
+      connection-test-query: SELECT 1
+      idle-timeout: 30000
+
+  #    continue-on-error: true
+  jpa:
+    generate-ddl: true
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQL95Dialect
+  #  mail:
+  #    host:
+  #    port: 25
+  #    properties:
+  #      mail.smtp.auth: false
+  #      mail.smtp.starttls.enable: false
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: user
+    password: password
+
+logging:
+  level:
+    root: info
+  #    com.hancom.mlservicehome.controller: debug
+  file:
+    path: ${user.home}/logs/todoList
+    name: ${logging.file.path}/todoList.log
+#    max-size: 10MB
+#  config: classpath:logback/logback-remote.xml
+
+springdoc:
+  version: '@springdoc.version@'
+  api-docs:
+    enabled: true
+
+application:
+  security:
+    cors:
+      origins: http://localhost:8880, http://localhost:8181
+
+
