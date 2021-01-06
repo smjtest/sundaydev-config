@@ -39,4 +39,4 @@ application:
     jwt:
       symmetric-signkey: KyjQRea02F25bQ1P0TAAcdFPN3FM/OtjwTiwhZudpuE=KyjQRea02F25bQ1P0TAAcdFPN3FM/OtjwTiwhZudpuE=
   info:
-    message: dev
+    message: dev-reflush
